@@ -1,6 +1,6 @@
 {
   "name": "publisher-subscriber-ts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Publisher subscriber library for javascript",
   "main": "lib/publisher.min.js",
   "module": "lib/publisher.es.js",
