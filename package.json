@@ -16,7 +16,7 @@
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags",
-    "uglify": "uglifyjs lib/publisher.js --compress --mangle --output lib/publisher.min.js"
+    "uglify": "uglifyjs lib/publisher.min.js --compress --mangle --output lib/publisher.min.js"
   },
   "repository": {
     "type": "git",
