@@ -1,6 +1,6 @@
 {
   "name": "publisher-subscriber-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Publisher subscriber library for javascript",
   "main": "lib/publisher.js",
   "types": "lib/publisher.d.ts",
@@ -9,17 +9,21 @@
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
-    "prepare" : "npm run build",
-    "prepublishOnly" : "npm test && npm run lint",
-    "preversion" : "npm run lint",
-    "version" : "npm run format && git add -A src",
-    "postversion" : "git push && git push --tags"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/harshmistry/publisher-subscriber-ts.git"
   },
-  "keywords": ["Publisher", "Subscriber", "Topic"],
+  "keywords": [
+    "Publisher",
+    "Subscriber",
+    "Topic"
+  ],
   "author": "Harsh Mistry",
   "license": "ISC",
   "files": [
