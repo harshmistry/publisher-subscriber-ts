@@ -36,14 +36,17 @@ test('Topic subscription', () => {
   expect(topic1.topicName).toBe(topicName);
 
   const option: SubscribeOption = { topicName: topicName };
-  expect(Publisher.subscribeTopic(option, callBack)).toBeInstanceOf(Subscriber);
+  const subscriber = Publisher.subscribeTopic(option, callBack);
+  expect(subscriber).toBeInstanceOf(Subscriber);
+  expect(subscriber?.topicName).toBe(topicName);
 });
 
 test('Topic name not found while unsubscribing', () => {
   let topicName = 'Topic not created yet';
   try {
-    const sub = new Subscriber(callBack);
-    expect(Publisher.unsubscribeTopic(topicName, sub)).toThrowError('Cannot find topic with name: ' + topicName);
+    const sub = new Subscriber(callBack, topicName);
+    expect(sub.topicName).toBe(topicName);
+    expect(Publisher.unsubscribeTopic(sub)).toThrowError('Cannot find topic with name: ' + topicName);
   } catch (e) {}
 
   topicName = 'Topic 1';
@@ -54,5 +57,5 @@ test('Topic name not found while unsubscribing', () => {
   const sub1 = Publisher.subscribeTopic(option, callBack);
   expect(sub1).toBeInstanceOf(Subscriber);
 
-  expect(Publisher.unsubscribeTopic(topicName, sub1 as Subscriber)).toBeUndefined();
+  expect(Publisher.unsubscribeTopic(sub1 as Subscriber)).toBeUndefined();
 });

@@ -47,11 +47,11 @@ export class Publisher {
    * @throws {'Cannot find topic with name: '  ${topicName}} Thrown when given topic name is not found
    * @param {Subscriber} subscriber Subscriber of this topic
    */
-  public static unsubscribeTopic(topicName: string, subscriber: Subscriber) {
-    if (!this._topicMap.has(topicName)) {
-      throw new Error('Cannot find topic with name: ' + topicName);
+  public static unsubscribeTopic(subscriber: Subscriber) {
+    if (!this._topicMap.has(subscriber.topicName)) {
+      throw new Error('Cannot find topic with name: ' + subscriber.topicName);
     } else {
-      this._topicMap?.get(topicName)?.unsubscribe(subscriber);
+      this._topicMap?.get(subscriber.topicName)?.unsubscribe(subscriber);
     }
   }
 }

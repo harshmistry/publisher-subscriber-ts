@@ -8,10 +8,12 @@ import { v4 as uuidv4 } from 'uuid';
 export class Subscriber {
   private _callBack: (...args: any[]) => void;
   private _id: string;
+  private _topicName: string;
 
-  constructor(callBack: (...args: any[]) => void) {
+  constructor(callBack: (...args: any[]) => void, topicName: string) {
     this._callBack = callBack;
     this._id = uuidv4();
+    this._topicName = topicName;
   }
 
   /**
@@ -30,5 +32,14 @@ export class Subscriber {
    */
   get id(): string {
     return this._id;
+  }
+
+  /**
+   * Getter for topic name. Used for unsubscription.
+   *
+   * @returns {string} topic name
+   */
+  get topicName(): string {
+    return this._topicName;
   }
 }

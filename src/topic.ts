@@ -37,7 +37,7 @@ export class Topic {
    * @returns {Subscriber} Final subscriber object once successfully subscribed
    */
   subscribe(callback: (...args: any[]) => void, option: SubscribeOption): Subscriber {
-    const subscriber = new Subscriber(callback);
+    const subscriber = new Subscriber(callback, this._topicName);
     if (option.getLastValue && this._currentValue) {
       this.emitValueToSubscriber(subscriber);
     }

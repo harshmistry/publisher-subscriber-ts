@@ -69,8 +69,8 @@ topic1.publish(event);
 ### 4. Unsubscribing a Topic
 
 ```javascript
-// @class Publisher has static helper methods. Pass topic name and subscription object to be unsubscribed.
-Publisher.unsubscribeTopic("Topic 1", subscription1);
+// @class Publisher has static helper methods. Pass subscription object to be unsubscribed.
+Publisher.unsubscribeTopic(subscription1);
 ```
 
 ## Documentation
@@ -81,7 +81,7 @@ Publisher.unsubscribeTopic("Topic 1", subscription1);
 | -------| ------------|
 |*createTopic(topicName: string)* | Creates new topic for given topic name|
 |*subscribeTopic(option: SubscribeOption, callback: Function): Subscriber* | Subscribe to a particular topic by providing option and a callback function|
-|*unsubscribeTopic(topicName: string, subscriber: Subscriber)* | Unsubscribe any topic for given subscriber|
+|*unsubscribeTopic(subscriber: Subscriber)* | Unsubscribe any given subscriber|
 
 
 #### 2. @class **Subscriber**
@@ -89,6 +89,7 @@ Publisher.unsubscribeTopic("Topic 1", subscription1);
 |------- | ------------|
 |*callBack* | Getter for returning callback function|
 |*id* | Getter for returning subscrber ID|
+|*topicName* | Getter for returning topic name|
 
   
 
