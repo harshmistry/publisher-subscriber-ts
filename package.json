@@ -13,10 +13,11 @@
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run clear && npm run build && npm run uglify",
     "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm run lint",
+    "preversion": "npm run generate-changelog && npm run lint",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags",
-    "uglify": "uglifyjs lib/publisher.min.js --compress --mangle --output lib/publisher.min.js"
+    "uglify": "uglifyjs lib/publisher.min.js --compress --mangle --output lib/publisher.min.js",
+    "generate-changelog": "changelog generate"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
   "devDependencies": {
     "@types/jest": "^26.0.19",
     "@types/uuid": "^8.3.0",
+    "generate-changelog": "^1.8.0",
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
