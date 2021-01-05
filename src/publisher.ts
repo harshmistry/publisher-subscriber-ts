@@ -44,6 +44,7 @@ export class Publisher {
   /**
    * Unsubscribe any topic for given subscriber
    * @param {string} topicName 
+   * @throws {'Cannot find topic with name: '  ${topicName}} Thrown when given topic name is not found
    * @param {Subscriber} subscriber Subscriber of this topic
    */
   public static unsubscribeTopic(topicName: string, subscriber: Subscriber) {
