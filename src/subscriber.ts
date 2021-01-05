@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 /**
  * @author Harsh A. Mistry
- * 
+ *
  * Subscriber class to start listening to any topic
  */
 export class Subscriber {
@@ -16,7 +16,7 @@ export class Subscriber {
 
   /**
    * Getter for callback
-   * 
+   *
    * @returns {Function} callback function provided while subscribing
    */
   get callBack(): (...args: any[]) => void {
@@ -25,7 +25,7 @@ export class Subscriber {
 
   /**
    * Getter for subscrber ID. Used for unsubscription.
-   * 
+   *
    * @returns {string} subscription ID
    */
   get id(): string {

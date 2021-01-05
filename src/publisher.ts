@@ -4,7 +4,7 @@ import { SubscribeOption } from './publisher.model';
 
 /**
  * @author Harsh A. Mistry
- * 
+ *
  * Publisher class to publish new topics and emit values
  */
 export class Publisher {
@@ -13,7 +13,7 @@ export class Publisher {
   /**
    * Creates new topic for given topic name
    * @param {string} topicName Name for topic to be created
-   * 
+   *
    * @returns {Topic} New created topic
    */
   public static createTopic(topicName: string): Topic {
@@ -24,11 +24,11 @@ export class Publisher {
 
   /**
    * Subscribe to a particular topic by providing option and a callback function.
-   * @param {SubscribeOption} option 
-   * @param {Function} callback 
+   * @param {SubscribeOption} option
+   * @param {Function} callback
    * @throws {Topic name cannot be empty or null while subscribing} Error if topic name passed is null or empty
    * @throws {'Cannot find topic with name: ' ${topic_name} '. Please create one and then subscribe.'} If given topic name does not exist
-   * 
+   *
    * @returns {Subscriber}
    */
   public static subscribeTopic(option: SubscribeOption, callback: (...args: any[]) => void): Subscriber | undefined {
@@ -43,7 +43,7 @@ export class Publisher {
 
   /**
    * Unsubscribe any topic for given subscriber
-   * @param {string} topicName 
+   * @param {string} topicName
    * @throws {'Cannot find topic with name: '  ${topicName}} Thrown when given topic name is not found
    * @param {Subscriber} subscriber Subscriber of this topic
    */
