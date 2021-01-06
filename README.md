@@ -73,6 +73,9 @@ topic1.publish(event);
 Publisher.unsubscribeTopic(subscription1);
 ```
 
+#### [Stackblitz sample](https://stackblitz.com/edit/angular-publisher-subscriber-yvfzkv?file=src/app/app.component.ts)
+
+
 ## Documentation
 
 #### 1. @class **Publisher**
@@ -106,6 +109,3 @@ Publisher.unsubscribeTopic(subscription1);
 |-------- | -----------|
 |*topicName* | **Required** string option to pass name|
 |*getLastValue* | **Optional** boolean flag to indicate if last emitted value from topic should be re-emitted for given subscriber only. Default value is __*false*__ |
-
-
-#### [Stackblitz sample](https://stackblitz.com/edit/angular-publisher-subscriber-yvfzkv?file=src/app/app.component.ts)
