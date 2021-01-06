@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { generateUUID } from './utility';
 
 /**
  * @author Harsh A. Mistry
@@ -12,7 +12,7 @@ export class Subscriber {
 
   constructor(callBack: (...args: any[]) => void, topicName: string) {
     this._callBack = callBack;
-    this._id = uuidv4();
+    this._id = generateUUID();
     this._topicName = topicName;
   }
 
